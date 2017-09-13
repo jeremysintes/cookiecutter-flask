@@ -2,7 +2,7 @@ sphinx_rtd_theme==0.2.4
 pipreqs==0.4.9
 
 Flask==0.12.2
-setuptools==36.2.7
+setuptools==36.4.0
 gunicorn==19.7.1
 
 bumpversion==0.5.3
