@@ -1,5 +1,5 @@
 sphinx_rtd_theme==0.2.4
-pipreqs
+pipreqs==0.4.9
 
 Flask==0.12.2
 setuptools==36.2.7
