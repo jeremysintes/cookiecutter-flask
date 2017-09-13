@@ -30,5 +30,5 @@ PyYAML==3.12
 {% if cookiecutter.use_pytest == 'y' -%}
 
 pytest==3.2.2
-pytest-runner==2.11.1
+pytest-runner==2.12.1
 {% endif %}
