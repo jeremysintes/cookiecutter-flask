@@ -1,4 +1,4 @@
-sphinx_rtd_theme
+sphinx_rtd_theme==0.2.4
 pipreqs
 
 Flask==0.12.2
