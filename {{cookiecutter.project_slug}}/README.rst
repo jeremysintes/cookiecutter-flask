@@ -40,7 +40,7 @@ Quickstart
 
 .. code-block:: console
 
-    git clone gh://{{ cookiecutter.innersource_username }}/{{ cookiecutter.project_slug }}
+    git clone gh://{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 
 2. It is recommended to create a developpement environment (exemple below with Anaconda):
 
