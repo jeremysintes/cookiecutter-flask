@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use {{ cookiecutter.project_name }} in a project::
+To use Flask Boilerplate in a project::
 
-    import {{ cookiecutter.project_slug }}
+    import flask_boilerplate
