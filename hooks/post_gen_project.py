@@ -14,11 +14,8 @@ def remove_directory(dirpath):
 def rename(filepath, newname):
     os.rename(os.path.join(PROJECT_DIRECTORY, filepath), os.path.join(PROJECT_DIRECTORY, newname), )   
 
-"""def unzip(path_to_zip_file):
-    import zipfile
-    zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
-    zip_ref.extractall(.)
-    zip_ref.close()"""
+
+
 
 
 if __name__ == '__main__':
@@ -43,11 +40,14 @@ if __name__ == '__main__':
         init_flask_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__flask.py')
         init_pypi_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__pypi.py')
         init_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__.py')
+
         remove_file(template_file)    
         remove_file(views_file)    
         remove_directory(static_file)    
         remove_file(init_flask_file)    
+        remove_file('app.yaml')
         rename(init_pypi_file, init_file )
+
     
     if 'flask' == '{{ cookiecutter.type_of_project }}':
         #delete the pypi elements from the {{ cookiecutter.project_slug }} folder
@@ -55,9 +55,23 @@ if __name__ == '__main__':
         init_pypi_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__pypi.py')
         init_flask_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__flask.py')
         init_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__.py')
+        template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
+        APP_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}')
+        
+        shutil.unpack_archive(template_file, APP_DIRECTORY)
+        remove_file(template_file)        
         remove_file('{{ cookiecutter.project_slug }}/__init__pypi.py')
         rename(init_flask_file, init_file )
 
+
+    if 'n' == '{{ cookiecutter.create_devsite }}':
+        remove_file('run_devsite.py')  
+        remove_directory('{{ cookiecutter.project_slug }}_devsite')
+
+    if 'y' == '{{ cookiecutter.create_devsite }}':
+        DEVSITE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}_devsite')
+        template_file = os.path.join('{{ cookiecutter.project_slug }}_devsite', 'templates.zip')
+        shutil.unpack_archive(template_file, DEVSITE_DIRECTORY)
 
 
 

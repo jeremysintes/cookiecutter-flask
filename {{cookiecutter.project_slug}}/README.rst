@@ -3,22 +3,6 @@
 {{ cookiecutter.project_name }}
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
-{% if is_open_source %}
-.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg
-        :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}
-
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg
-        :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-
-.. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest
-        :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-{%- endif %}
-
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg
-     :target: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/
-     :alt: Updates
-
 
 {{ cookiecutter.project_short_description }}
 
@@ -33,8 +17,11 @@ Features
 * TODO
 
 
+
 Quickstart
 ----------
+
+{% if cookiecutter.type_of_project == 'flask' %}
 
 1. Clone the git
 
@@ -67,13 +54,64 @@ Quickstart
     python run.py 
 
 6. Go to your browser at the indicated URL
+{% endif %}
+
+
+{% if cookiecutter.type_of_project == 'pypi' %}
+
+Stable release
+~~~~~~~~~~~~~~
+
+To install {{ cookiecutter.project_name }}, run this command in your terminal:
+
+.. code-block:: console
+
+    $ pip install {{ cookiecutter.project_slug }}
+
+This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release. 
+
+If you don't have `pip`_ installed, this `Python installation guide`_ can guide
+you through the process.
+
+.. _pip: https://pip.pypa.io
+.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+
+
+From sources
+~~~~~~~~~~~~
+
+The sources for {{ cookiecutter.project_name }} can be downloaded from the `Github repo`_.
+
+You can either clone the public repository:
+
+.. code-block:: console
+
+    $ git clone git://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+
+Or download the `tarball`_:
+
+.. code-block:: console
+
+    $ curl  -OL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+
+Once you have a copy of the source, you can install it with:
+
+.. code-block:: console
+
+    $ python setup.py install
+
+
+.. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+.. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+{% endif %}
+
 
 
 Credits
 ---------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `jeremysintes/cookiecutter-python_boilerplate`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _`jeremysintes/cookiecutter-python_boilerplate`: https://github.com/jeremysintes/cookiecutter-python_boilerplate
 

@@ -4,17 +4,54 @@
 Installation
 ============
 
+{% if cookiecutter.type_of_project == 'flask' %}
+
+1. Clone the git
+
+.. code-block:: console
+
+    git clone gh://{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+
+2. It is recommended to create a developpement environment (exemple below with Anaconda):
+
+.. code-block:: console
+
+	conda create –n {{ cookiecutter.project_slug }}
+
+3. Activate the developpement environment :
+
+.. code-block:: console
+
+   activate {{ cookiecutter.project_slug }}
+
+4. Install the required librairies :
+
+.. code-block:: console
+
+    pip install -r requirements
+
+5. Run the application : 
+
+.. code-block:: console
+
+    python run.py 
+
+6. Go to your browser at the indicated URL
+{% endif %}
+
+
+{% if cookiecutter.type_of_project == 'pypi' %}
 
 Stable release
 --------------
 
-To install Flask Boilerplate, run this command in your terminal:
+To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install flask_boilerplate
+    $ pip install {{ cookiecutter.project_slug }}
 
-This is the preferred method to install Flask Boilerplate, as it will always install the most recent stable release. 
+This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release. 
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +63,19 @@ you through the process.
 From sources
 ------------
 
-The sources for Flask Boilerplate can be downloaded from the `Github repo`_.
+The sources for {{ cookiecutter.project_name }} can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/jeremysintes/flask_boilerplate
+    $ git clone git://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/jeremysintes/flask_boilerplate/tarball/master
+    $ curl  -OL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +84,6 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/jeremysintes/flask_boilerplate
-.. _tarball: https://github.com/jeremysintes/flask_boilerplate/tarball/master
+.. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+.. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+{% endif %}
