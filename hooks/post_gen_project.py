@@ -71,9 +71,7 @@ if __name__ == '__main__':
 
     if 'y' == '{{ cookiecutter.create_devsite }}':
         DEVSITE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}_devsite')
-        template_file = os.path.join('{{ cookiecutter.project_slug }}_devsite', 'templates.zip')
-        shutil.unpack_archive(template_file, DEVSITE_DIRECTORY)
-
+ 
 
 
 
