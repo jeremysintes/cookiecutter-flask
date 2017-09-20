@@ -12,14 +12,14 @@
 {% endif %}
 
 Features
---------
+========
 
 * TODO
 
 
 
 Quickstart
-----------
+==========
 
 {% if cookiecutter.type_of_project == 'flask' %}
 
@@ -60,8 +60,7 @@ Quickstart
 {% if cookiecutter.type_of_project == 'pypi' %}
 
 Stable release
-~~~~~~~~~~~~~~
-
+--------------
 To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
@@ -78,7 +77,7 @@ you through the process.
 
 
 From sources
-~~~~~~~~~~~~
+------------
 
 The sources for {{ cookiecutter.project_name }} can be downloaded from the `Github repo`_.
 
@@ -106,9 +105,26 @@ Once you have a copy of the source, you can install it with:
 {% endif %}
 
 
+Licence
+=======
+
+{% if cookiecutter.open_source_license == 'Not open source' %}
+{{ cookiecutter.project_name }} is not open source. licensed under the {{ cookiecutter.open_source_license }} - see the LICENSE.rst file for details
+{% endif %}
+
+{% if is_open_source %}
+{{ cookiecutter.project_name }} is licensed under the {{ cookiecutter.open_source_license }} - see the LICENSE.rst file for details
+{% endif %}
+
+Changes
+=======
+
+**unreleased**
+
+
 
 Credits
----------
+=======
 
 This package was created with Cookiecutter_ and the `jeremysintes/cookiecutter-python_boilerplate`_ project template.
 

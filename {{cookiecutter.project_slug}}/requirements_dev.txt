@@ -1,28 +1,28 @@
 sphinx_rtd_theme
 pipreqs
 
-Flask==0.12.2
-setuptools==36.2.7
-gunicorn==19.7.1
+Flask>=0.12.2
+setuptools>=36.2.7
+gunicorn>=19.7.1
 
-bumpversion==0.5.3
-wheel==0.29.0
-watchdog==0.8.3
-flake8==2.6.0
-tox==2.3.1
-coverage==4.1
-Sphinx==1.6.3
+bumpversion>=0.5.3
+wheel>=0.29.0
+watchdog>=0.8.3
+flake8>=2.6.0
+tox>=2.3.1
+coverage>=4.1
+Sphinx>=1.6.3
 
 
 {% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
 
-cryptography==1.7
-PyYAML==3.11
+cryptography>=1.7
+PyYAML>=3.11
 {% endif %}
 
 
 {% if cookiecutter.use_pytest == 'y' -%}
 
-pytest==2.9.2
-pytest-runner==2.11.1
+pytest>=2.9.2
+pytest-runner>=2.11.1
 {% endif %}

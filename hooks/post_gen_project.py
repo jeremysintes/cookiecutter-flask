@@ -57,11 +57,12 @@ if __name__ == '__main__':
         init_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__.py')
         template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
         APP_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}')
-        
+
         shutil.unpack_archive(template_file, APP_DIRECTORY)
         remove_file(template_file)        
         remove_file('{{ cookiecutter.project_slug }}/__init__pypi.py')
         rename(init_flask_file, init_file )
+        remove_file('setup.py')
 
 
     if 'n' == '{{ cookiecutter.create_devsite }}':
