@@ -4,6 +4,43 @@
 Installation
 ============
 
+{% if cookiecutter.type_of_project == 'flask' %}
+
+1. Clone the git
+
+.. code-block:: console
+
+    git clone gh://{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+
+2. It is recommended to create a developpement environment (exemple below with Anaconda):
+
+.. code-block:: console
+
+	conda create –n {{ cookiecutter.project_slug }}
+
+3. Activate the developpement environment :
+
+.. code-block:: console
+
+   activate {{ cookiecutter.project_slug }}
+
+4. Install the required librairies :
+
+.. code-block:: console
+
+    pip install -r requirements
+
+5. Run the application : 
+
+.. code-block:: console
+
+    python run.py 
+
+6. Go to your browser at the indicated URL
+{% endif %}
+
+
+{% if cookiecutter.type_of_project == 'pypi' %}
 
 Stable release
 --------------
@@ -49,3 +86,4 @@ Once you have a copy of the source, you can install it with:
 
 .. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 .. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+{% endif %}

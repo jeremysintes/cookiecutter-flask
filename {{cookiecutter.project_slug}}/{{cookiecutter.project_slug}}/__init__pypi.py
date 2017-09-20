@@ -1,10 +1,6 @@
-from flask import Flask, request
+# -*- coding: utf-8 -*-
 
-
-app = Flask(__name__)
-
-
-from {{cookiecutter.project_slug}} import views
+"""Top-level package for {{ cookiecutter.project_name }}."""
 
 
 __author__ = """{{ cookiecutter.full_name }}"""

@@ -1,5 +1,5 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+Welcome to {{ cookiecutter.project_slug }}'s documentation!
+===========================================================
 
 Contents:
 
@@ -11,8 +11,9 @@ Contents:
    usage
    modules
    contributing
-   {% if cookiecutter.create_author_file == 'y' -%}authors
-   {% endif -%}history
+   authors
+   history
+   code_of_conduct
 
 Indices and tables
 ==================
