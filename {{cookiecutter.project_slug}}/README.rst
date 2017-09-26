@@ -105,11 +105,11 @@ Once you have a copy of the source, you can install it with:
 {% endif %}
 
 
-Licence
+License
 =======
 
 {% if cookiecutter.open_source_license == 'Not open source' %}
-{{ cookiecutter.project_name }} is not open source. licensed under the {{ cookiecutter.open_source_license }} - see the LICENSE.rst file for details
+{{ cookiecutter.project_name }} is not open source.
 {% endif %}
 
 {% if is_open_source %}
