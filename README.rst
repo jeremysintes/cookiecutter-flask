@@ -46,4 +46,7 @@ Credits
 This package was created based on Cookiecutter_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+<<<<<<< HEAD
 
+=======
+>>>>>>> release/0.2.0

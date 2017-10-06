@@ -10,7 +10,7 @@ Installation
 
 .. code-block:: console
 
-    git clone gh://{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+    git clone gh://{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}
 
 2. It is recommended to create a developpement environment (exemple below with Anaconda):
 
@@ -63,19 +63,19 @@ you through the process.
 From sources
 ------------
 
-The sources for {{ cookiecutter.project_name }} can be downloaded from the `Github repo`_.
+The sources for {{ cookiecutter.project_name }} can be downloaded from the `Git repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+    $ git clone https://{{ cookiecutter.git_source }}/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+    $ curl  -OL https://{{ cookiecutter.git_source }}/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -84,6 +84,6 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-.. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
+.. _Git repo: https://{{ cookiecutter.git_source }}/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}
+.. _tarball: https://{{ cookiecutter.git_source }}/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}/tarball/master
 {% endif %}

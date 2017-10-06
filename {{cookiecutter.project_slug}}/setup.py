@@ -22,7 +22,7 @@ setup_requirements = [
 {%- if cookiecutter.use_pytest == 'y' %}
     'pytest-runner',
 {%- endif %}
-    # TODO({{ cookiecutter.github_username }}): put setup requirements (distutils extensions, etc.) here
+    # TODO({{ cookiecutter.git_username }}): put setup requirements (distutils extensions, etc.) here
 ]
 
 test_requirements = [
@@ -47,7 +47,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+    url='https://{{ cookiecutter.git_source }}/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}',
     packages=find_packages(include=['{{ cookiecutter.project_slug }}']),
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}
     entry_points={

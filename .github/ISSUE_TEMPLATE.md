@@ -1,4 +1,4 @@
-* Date you used Cookiecutter PyPackage:
+* Date you used Cookiecutter Python-Boilerplate:
 * Cookiecutter version used, if any:
 * Python version, if any:
 * Operating System:

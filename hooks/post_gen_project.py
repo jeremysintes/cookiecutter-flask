@@ -31,7 +31,7 @@ if __name__ == '__main__':
         remove_file(cli_file)
 
     if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        remove_file('LICENSE')
+        remove_file('LICENSE.rst')
     
     if 'pypi' == '{{ cookiecutter.type_of_project }}':
         template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
@@ -55,11 +55,11 @@ if __name__ == '__main__':
         init_pypi_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__pypi.py')
         init_flask_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__flask.py')
         init_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__.py')
-        template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
+        #template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
         APP_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}')
 
-        shutil.unpack_archive(template_file, APP_DIRECTORY)
-        remove_file(template_file)        
+        #shutil.unpack_archive(template_file, APP_DIRECTORY)
+        #remove_file(template_file)        
         remove_file('{{ cookiecutter.project_slug }}/__init__pypi.py')
         rename(init_flask_file, init_file )
         remove_file('setup.py')
@@ -71,9 +71,7 @@ if __name__ == '__main__':
 
     if 'y' == '{{ cookiecutter.create_devsite }}':
         DEVSITE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}_devsite')
-        template_file = os.path.join('{{ cookiecutter.project_slug }}_devsite', 'templates.zip')
-        shutil.unpack_archive(template_file, DEVSITE_DIRECTORY)
-
+ 
 
 
 
