@@ -1,4 +1,4 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
+{% raw %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,21 +17,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       
       <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <meta name="description" content="{{cookiecutter.project_short_description}}">
-      <meta name="author" content="{{cookiecutter.full_name}}">
+      <meta name="description" content="{{site.data.general.project_short_description}}">
+      <meta name="author" content="{{site.data.general.full_name}}">
       <link rel="icon" href="http://via.placeholder.com/32x32" sizes="32x32">
 
       <!-- The title is automatically defined according to the flask title -->
-      <title>{{cookiecutter.project_name}} - {% raw %}{% if title %}{{ title }}{% else %}{% endraw %}
-      {% raw %}{% endif %}{% endraw %}</title>
+      <title>{{site.data.general.project_name}}</title>
 
       <!-- Bootstrap core CSS online-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
       
-      <link rel="stylesheet" href="{% raw %}{{ url_for('static',filename='custom.css')}}{% endraw %}" crossorigin="anonymous">
+      <link rel="stylesheet" href="../css/custom.css" crossorigin="anonymous">
 
       <!-- Bootstrap core CSS core -->
-      <!-- <link type="text/css" rel="stylesheet" href="{% raw %}{{ url_for('static',filename='node_modules/bootstrap/dist/css/bootstrap.css')}}{% endraw %}"  media="screen,projection"/> -->
+      <!-- <link type="text/css" rel="stylesheet" href="{{site.baseurl}}/node_modules/bootstrap/dist/css/bootstrap.css"  media="screen,projection"/> -->
 
 
       <!--Import Google Icon Font-->
@@ -67,7 +66,7 @@
 
       <!-- ~~~~~~~~    brand start    ~~~~~~~~ -->
 
-        <a class="navbar-brand" href="/"><img src="http://via.placeholder.com/32x32" width="30" height="30" class="d-inline-block align-top" alt=""> {{cookiecutter.project_name}}</a>
+        <a class="navbar-brand" href="/"><img src="http://via.placeholder.com/32x32" width="30" height="30" class="d-inline-block align-top" alt=""> {{site.data.general.project_name}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,7 +83,7 @@
             <li class="nav-item">
               <a class="nav-link" target="_blank" 
               {% if is_open_source %}
-              href="https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io."
+              href="https://{{ site.data.general.project_slug | replace('_', '-') }}.readthedocs.io."
               {% else %}
               href="../docs/_build/index.html"
               {% endif %}
@@ -106,32 +105,32 @@
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
           <li class="nav-item dropdown">
             <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              v{{cookiecutter.version}}
+              v{{site.data.general.version}}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-              <a class="dropdown-item active" href="../docs/4.0/">Latest (v{{cookiecutter.version}})</a>
+              <a class="dropdown-item active" href="../docs/4.0/">Latest (v{{site.data.general.version}})</a>
               <!-- <a class="dropdown-item" href="#">v0 Alpha 2</a> -->
             </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link p-2" href="https://twitter.com/{{cookiecutter.project_slug}}/" target="_blank"  rel="noopener" aria-label="twitter flux">
+            <a class="nav-link p-2" href="https://twitter.com/{{site.data.general.project_slug}}/" target="_blank"  rel="noopener" aria-label="twitter flux">
               <i class="fa fa-twitter" aria-hidden="true" title="twitter flux"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link p-2" 
             {% if is_open_source %}
-            href="https://gitter.im/{{ cookiecutter.project_slug }}"
+            href="https://gitter.im/{{ site.data.general.project_slug }}"
             {% else %}
-            href="https://{{ cookiecutter.project_slug }}.slack.com/"
+            href="https://{{ site.data.general.project_slug }}.slack.com/"
             {% endif %}
             href="" target="_blank" rel="noopener" aria-label="chatroom">
              <i class="fa fa-comments" aria-hidden="true" title="chatroom"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-2" href="https://{{cookiecutter.git_source}}/{{cookiecutter.git_username}}/{{cookiecutter.project_slug}}" target="_blank" rel="noopener" aria-label="git repo">
+            <a class="nav-link p-2" href="https://{{site.data.general.git_source}}/{{site.data.general.git_username}}/{{site.data.general.project_slug}}" target="_blank" rel="noopener" aria-label="git repo">
               <i class="fa fa-github fa-2" aria-hidden="true" title="git repo"></i>
             </a>
           </li>
@@ -155,7 +154,7 @@
     <!-- ++++++++++    MAIN   START    ++++++++++ -->
     
       <main>
-        {% raw %}{% block content %}{% endblock %}{% endraw %}   
+      {{content}}
       </main>
     <!-- ++++++++++    MAIN   END    ++++++++++ -->
 
@@ -163,11 +162,86 @@
 
     <!-- ++++++++++    FOOTER   START    ++++++++++ -->
       
-      <footer class="footer" style="position: absolute; bottom: 0; width: 100#; height: 60px; line-height: 60px; background-color: #fff;">
-
+    <footer class="nb-footer">
         <div class="container">
-          <span class="text-muted">© 2017 {{ cookiecutter.full_name }}</span>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="about">
+                <!-- <img src="http://via.placeholder.com/32x32" class="img-responsive center-block" alt=""> -->
+                <!-- <p>Bootstrap Footer example snippets with CSS, Javascript and HTML. Code example of bootstrap-3 footer using HTML, Javascript, jQuery, and CSS. 5 Beautiful and Responsive Footer Templates. Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p> -->
+                <div class="social-media">
+                  <ul class="list-inline">
+                    <!--<li class="list-inline-item"><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-facebook"></i></a></li>-->
+                    <li class="list-inline-item"><a href="https://twitter.com/{{site.data.general.git_username}}/" title=""><i class="fa fa-twitter"></i></a></li>
+                    <!-- <li class="list-inline-item"><a href="https://plus.google.com/u/0/+{{site.data.general.git_username}}" title=""><i class="fa fa-google-plus"></i></a></li> -->
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/{{site.data.general.git_username}}/" title=""><i class="fa fa-linkedin"></i></a></li>                   
+                    <li class="list-inline-item"><a href="https://www.youtube.com/user/{{site.data.general.git_username}}" title=""><i class="fa fa-youtube-play"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-0">
+                <br>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <div class="footer-info-single">
+                  <h2 class="title">About us</h2>
+                    <ul class="list-unstyled">
+                    <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Blog</a></li>
+                    <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Jobs</a></li>
+                    <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Press</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <div class="footer-info-single">
+                  <h2 class="title">Product</h2>
+                    <ul class="list-unstyled">
+                    <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+              <div class="footer-info-single">
+                <h2 class="title">Developer</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Documentation</a></li>
+                  <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Chat</a></li>
+                  <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Forum</a></li>
+                  <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Developer Blog</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 animated fadeInRight">
+              <div class="footer-info-single">
+                <h2 class="title">Newsletter</h2>
+                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                <p>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                          <button class="btn btn-default" type="button"><i class="fa fa-envelope"></i></button>
+                    </span>
+                  </div>
+                  <!-- /input-group -->
+                </p>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-0">
+                <br>
+            </div>
+          </div>
         </div>
+        <section class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>2017 © All Rights Reserved.       <a href="">Terms & Conditions</a> | <a href="">Privacy Policy</a> | <a href="">Cookies</a></p>
+              </div>
+              <div class="col-sm-6"></div>
+            </div>
+          </div>
+        </section>
       </footer>
 
 
@@ -211,3 +285,4 @@
 
 
 </html>
+{% endraw %}
