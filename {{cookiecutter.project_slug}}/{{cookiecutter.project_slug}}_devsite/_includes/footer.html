@@ -1,0 +1,107 @@
+{% raw %}
+<!-- ++++++++++    FOOTER   START    ++++++++++ -->
+<footer class="nb-footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="about">
+            <!-- <img src="http://via.placeholder.com/32x32" class="img-responsive center-block" alt=""> -->
+            <!-- <p>Bootstrap Footer example snippets with CSS, Javascript and HTML. Code example of bootstrap-3 footer using HTML, Javascript, jQuery, and CSS. 5 Beautiful and Responsive Footer Templates. Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p> -->
+            <div class="social-media">
+                <ul class="list-inline">
+                {% if site.use_facebook %}
+                <li class="list-inline-item">
+                  {% include icon-facebook.html username=site.git_username %}
+                </li>
+                {% endif %}
+                {% if site.use_twitter %}
+                <li class="list-inline-item">
+                  {% include icon-twitter.html username=site.git_username %}
+                </li>
+                {% endif %}
+                {% if site.use_googleplus %}
+                <li class="list-inline-item">
+                  {% include icon-googleplus.html username=site.git_username %}
+                </li>
+                {% endif %}
+                {% if site.use_linkedin %}
+                <li class="list-inline-item">
+                  {% include icon-linkedin.html username=site.git_username %}
+                </li>
+                {% endif %}       
+                {% if site.use_youtube %}
+                <li class="list-inline-item">
+                  {% include icon-youtube.html username=site.git_username %}
+                </li>
+                {% endif %}
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-0">
+            <br>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="footer-info-single">
+                <h2 class="title">About us</h2>
+                <ul class="list-unstyled">
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Blog</a></li>
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Jobs</a></li>
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="footer-info-single">
+                <h2 class="title">Product</h2>
+                <ul class="list-unstyled">
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <div class="footer-info-single">
+            <h2 class="title">Developer</h2>
+            <ul class="list-unstyled">
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Documentation</a></li>
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Chat</a></li>
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Forum</a></li>
+                <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Developer Blog</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 animated fadeInRight">
+            <div class="footer-info-single">
+            <h2 class="title">Newsletter</h2>
+            <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+            <p>
+                <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="fa fa-envelope"></i></button>
+                </span>
+                </div>
+                <!-- /input-group -->
+            </p>
+            </div>
+        </div>
+        <div class="col-md-1 col-sm-0">
+            <br>
+        </div>
+        </div>
+    </div>
+    <section class="copyright">
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+            <p>2017 © All Rights Reserved.       <a href="">Terms & Conditions</a> | <a href="">Privacy Policy</a> | <a href="">Cookies</a></p>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+        </div>
+    </section>
+    </footer>
+
+
+<!-- ++++++++++    FOOTER   END    ++++++++++ -->
+{% endraw %}
