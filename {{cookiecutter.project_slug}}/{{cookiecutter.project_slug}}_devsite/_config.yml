@@ -1,2 +1,24 @@
 permalink: pretty
-baseurl: 
+baseurl: ""
+full_name: {{cookiecutter.full_name}}
+project_short_description: {{cookiecutter.project_short_description}}
+project_name: {{cookiecutter.project_name}}
+project_slug: {{cookiecutter.project_slug}}
+version: {{cookiecutter.version}}
+git_username: {{cookiecutter.git_username}}
+git_source: {{cookiecutter.git_source}}
+email: {{cookiecutter.email}}
+git_source: {{cookiecutter.git_source}}
+open_source_license: {{cookiecutter.open_source_license}}
+
+#Social Network
+use_twitter: y
+use_facebook: 
+use_googleplus:
+use_linkedin: y
+use_youtube: y
+
+#Tools
+include_blog: y
+include_tutorial: 
+#include_documentation: 
