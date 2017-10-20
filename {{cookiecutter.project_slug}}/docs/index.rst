@@ -8,12 +8,12 @@ Contents:
 
    readme
    installation
-   usage
    modules
-   contributing
    authors
-   history
+   contributing
    code_of_conduct
+   changelog
+
 
 Indices and tables
 ==================

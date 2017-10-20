@@ -1,9 +1,14 @@
-=================
+.. include:: links.rst
+
+================
 Development Tools
 =================
 
-Git flow
---------
+Versionning
+-----------
+
+Gitflow_
+~~~~~~~~
 
 
 Bumpversion_
@@ -52,11 +57,19 @@ Pyup_
 
 {% endif %}
 
-.. _Bumpversion: https://pypi.python.org/pypi/bumpversion
+
+
+
+Dev_site
+=========
+
+Jekyll_
+------
 
 
 ==========================
 Tools under inverstigation
 ==========================
-- http://semver.org/
+
+Semver_
 

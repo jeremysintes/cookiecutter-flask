@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 _reflexion/
+tests/temp/
 
 # OSX useful to ignore
 *.DS_Store
