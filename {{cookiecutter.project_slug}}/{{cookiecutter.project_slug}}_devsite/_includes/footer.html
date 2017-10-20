@@ -9,29 +9,45 @@
             <!-- <p>Bootstrap Footer example snippets with CSS, Javascript and HTML. Code example of bootstrap-3 footer using HTML, Javascript, jQuery, and CSS. 5 Beautiful and Responsive Footer Templates. Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p> -->
             <div class="social-media">
                 <ul class="list-inline">
-                {% if site.use_facebook %}
+                {% if site.facebook %}
                 <li class="list-inline-item">
                   {% include icon-facebook.html username=site.git_username %}
                 </li>
                 {% endif %}
-                {% if site.use_twitter %}
+                {% if site.twitter %}
                 <li class="list-inline-item">
-                  {% include icon-twitter.html username=site.git_username %}
+                    {% if site.twitter == y %}
+                        {% include icon-twitter.html username=site.git_username %}
+                    {% else %}
+                        {% include icon-twitter.html username=site.twitter %}
+                    {% endif %}
                 </li>
                 {% endif %}
-                {% if site.use_googleplus %}
+                {% if site.googleplus %}
                 <li class="list-inline-item">
-                  {% include icon-googleplus.html username=site.git_username %}
+                    {% if site.googleplus == y %}
+                        {% include icon-googleplus.html username=site.git_username %}
+                    {% else %}
+                        {% include icon-googleplus.html username=site.googleplus %}
+                    {% endif %}
                 </li>
                 {% endif %}
-                {% if site.use_linkedin %}
+                {% if site.linkedin %}
                 <li class="list-inline-item">
-                  {% include icon-linkedin.html username=site.git_username %}
+                    {% if site.linkedin == y %}
+                        {% include icon-linkedin.html username=site.git_username %}
+                    {% else %}
+                        {% include icon-linkedin.html username=site.linkedin %}
+                    {% endif %}
                 </li>
                 {% endif %}       
-                {% if site.use_youtube %}
+                {% if site.youtube %}
                 <li class="list-inline-item">
-                  {% include icon-youtube.html username=site.git_username %}
+                    {% if site.youtube == y %}
+                        {% include icon-youtube.html username=site.git_username %}
+                    {% else %}
+                        {% include icon-youtube.html username=site.youtube %}
+                    {% endif %}
                 </li>
                 {% endif %}
                 </ul>
@@ -48,6 +64,7 @@
                 <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Blog</a></li>
                 <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Jobs</a></li>
                 <li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Press</a></li>
+                <li><a href="mailto:{{site.email}}" title=""><i class="fa fa-angle-double-right"></i> Contact us</a></li>              
                 </ul>
             </div>
         </div>

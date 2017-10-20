@@ -19,23 +19,34 @@
         <li class="nav-item">
             <a class="nav-link " href="/" rel="noopener">Home</a>
         </li>
+        {% if site.documentation %}
         <li class="nav-item">
-            <a class="nav-link" target="_blank" 
-            {% if is_open_source %}
-            href="https://{{ site.project_slug | replace('_', '-') }}.readthedocs.io."
+            {% if site.documentation == "readthedocs" %}
+            <a class="nav-link" target="_blank" href="https://{{ site.project_slug | replace('_', '-') }}.readthedocs.io." rel="noopener">Documentation</a>
+            {% elsif site.documentation == "y" %}
+            <a class="nav-link" target="_blank" href="{{site.baseurl}}/docs/html/" rel="noopener">Documentation</a>
             {% else %}
-            href="{{site.baseurl}}/docs/_build/"
+            <a class="nav-link " target="_blank" href="{{site.documentation}}" rel="noopener">Documentation</a>
             {% endif %}
-            rel="noopener">Documentation</a>
-        </li>
-        {% if site.include_tutorial %}
-        <li class="nav-item">
-            <a class="nav-link " href="{{site.baseurl}}/tutorial/" rel="noopener">Tutorials</a>
         </li>
         {% endif %}
-        {% if site.include_blog %}
+        {% if site.tutorial %}
         <li class="nav-item">
+            {% if site.tutorial == "y" %}
+            <a class="nav-link " href="{{site.baseurl}}/tutorial/" rel="noopener">Tutorials</a>
+            {% else %}
+            <a class="nav-link " href="{{site.tutorial}}" rel="noopener">Tutorials</a>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% if site.blog %}
+        <li class="nav-item">
+            {% if site.blog == "y" %}
             <a class="nav-link" href="{{site.baseurl}}/blog/" rel="noopener">Blog</a>
+            {% else %}
+            <a class="nav-link " href="{{site.blog}}" rel="noopener">Blog</a>
+            {% endif %}
+            
         </li>
         {% endif %}
         
@@ -56,26 +67,37 @@
             <!-- <a class="dropdown-item" href="#">v0 Alpha 2</a> -->
         </div>
         </li>
-
+        {% if site.twitter %}         
         <li class="nav-item">
-        <a class="nav-link p-2" href="https://twitter.com/{{site.project_slug}}/" target="_blank"  rel="noopener" aria-label="twitter flux">
-            <i class="fa fa-twitter" aria-hidden="true" title="twitter flux"></i>
-        </a>
+            {% if site.twitter == y %}
+                {% include icon-twitter.html username=site.git_username class='nav-link p-2' %}
+            {% else %}
+                {% include icon-twitter.html username=site.twitter class='nav-link p-2' %}
+            {% endif %}
         </li>
-        <li class="nav-item">
-        <a class="nav-link p-2" 
-        {% if is_open_source %}
-        href="https://gitter.im/{{ site.project_slug }}"
-        {% else %}
-        href="https://{{ site.project_slug }}.slack.com/"
         {% endif %}
-        href="" target="_blank" rel="noopener" aria-label="chatroom">
-            <i class="fa fa-comments" aria-hidden="true" title="chatroom"></i>
-        </a>
-        </li>
+        {% if site.chat %}
+            <li class="nav-item">
+                <a class="nav-link p-2" 
+                    {% if site.chat == "gitter" %}
+                        href="https://gitter.im/{{ site.project_slug }}"
+                    {% elsif site.chat == "slack" %}
+                        href="https://{{ site.project_slug }}.slack.com/"
+                    {% else %}
+                        href="{{ site.chat }}"
+                    {% endif %}
+                href="" target="_blank" rel="noopener" aria-label="chatroom">
+                    <i class="fa fa-comments" aria-hidden="true" title="chatroom"></i>
+                </a>
+            </li>
+        {% endif %}
         <li class="nav-item">
         <a class="nav-link p-2" href="https://{{site.git_source}}/{{site.git_username}}/{{site.project_slug}}" target="_blank" rel="noopener" aria-label="git repo">
-            <i class="fa fa-github fa-2" aria-hidden="true" title="git repo"></i>
+            {% if site.git_source == "github" %}
+                <i class="fa fa-github fa-2" aria-hidden="true" title="git repo"></i>
+            {% elsif site.git_source == "innersource" %}
+                <i class="fa fa-code-fork fa-2" aria-hidden="true" title="git repo"></i>
+            {% endif %}
         </a>
         </li>
         <li class="nav-item">

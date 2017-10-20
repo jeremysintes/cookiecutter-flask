@@ -1,3 +1,4 @@
+keep_files: [docs]
 permalink: pretty
 baseurl: ""
 full_name: {{cookiecutter.full_name}}
@@ -11,14 +12,66 @@ email: {{cookiecutter.email}}
 git_source: {{cookiecutter.git_source}}
 open_source_license: {{cookiecutter.open_source_license}}
 
-#Social Network
-use_twitter: y
-use_facebook: 
-use_googleplus:
-use_linkedin: y
-use_youtube: y
 
-#Tools
-include_blog: y
-include_tutorial: 
-#include_documentation: 
+# # # # # # # # # # # # # # # # 
+#  C O N F I G U R A T I O N  #
+# # # # # # # # # # # # # # # # 
+
+#----------------#
+# SOCIAL NETWORK #
+#----------------#
+
+# TWITTER
+# Option : y / your twitter's URL
+# - y = twitter.com/GIT_USERNAME
+twitter: y
+
+# FACEBOOK
+# Option : y / your Facebook's URL
+# - y = 
+facebook: y
+
+# GOOGLE PLUS
+# Option : y / your Google plus' URL
+# - y = 
+googleplus: y
+
+# LINKEDIN
+# Option : y / your Linkedin's URL
+# - y = 
+linkedin: y
+
+# YOUTUBE
+# Option : y / your Youtube's URL
+# - y = 
+youtube: y
+
+
+#-------#
+# TOOLS #
+#-------#
+
+# BLOG
+# Option : y / your BLOG's URLS  
+# - y = jekyll URL = BASEURL/blog
+blog: y
+
+
+# TUTORIAL
+# Option : y / your BLOG's URLS  
+# - y = jekyll URL = BASEURL/tutorial/
+tutorial: y
+
+
+# DOCUMENTATION
+# Option : readthedocs / y / your documentation's URLS  
+# - readthedocs URL =  is based on the project_slug
+# - y = jekyll URL = BASEURL/docs/_build/
+documentation: y
+
+
+# CHATROOM
+# Option : slack / gitter / your chat's URL  
+# - Slack URL = PROJECT_SLUG.slack.com
+# - Gitter URL = gitter.im/PROJECT_SLUG
+chat: slack
