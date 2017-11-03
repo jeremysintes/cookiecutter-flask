@@ -14,7 +14,8 @@ def remove_directory(dirpath):
 def rename(filepath, newname):
     os.rename(os.path.join(PROJECT_DIRECTORY, filepath), os.path.join(PROJECT_DIRECTORY, newname), )   
 
-
+def move(dirpath, dst):
+    shutil.move(os.path.join(PROJECT_DIRECTORY, dirpath), os.path.join(PROJECT_DIRECTORY, dst))
 
 
 
@@ -64,13 +65,12 @@ if __name__ == '__main__':
         rename(init_flask_file, init_file )
         remove_file('setup.py')
 
+    
+    move('reveal', '{{ cookiecutter.project_slug }}_devsite/assets')
+    
 
     if 'n' == '{{ cookiecutter.create_devsite }}':
-        remove_file('run_devsite.py')  
         remove_directory('{{ cookiecutter.project_slug }}_devsite')
 
-    if 'y' == '{{ cookiecutter.create_devsite }}':
-        DEVSITE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}_devsite')
- 
     # os.system("cd docs && make html && cd..")
     # os.system("git init && git flow init")

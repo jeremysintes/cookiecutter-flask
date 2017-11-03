@@ -54,11 +54,11 @@ youtube: y
 # BLOG
 # Option : y / your BLOG's URLS  
 # - y = jekyll URL = BASEURL/blog
-blog: y
+dev_blog: y
 
 
 # TUTORIAL
-# Option : y / your BLOG's URLS  
+# Option : y / your Tutorial's URLS  
 # - y = jekyll URL = BASEURL/tutorial/
 tutorial: y
 
