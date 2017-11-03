@@ -5,11 +5,12 @@ layout: default
 
 <div class="container">
   <!-- Example row of columns -->
-  <h2>Blog</h2>
-  <div class="row">
+  <h1>Blog</h1>
+  <br>
+  <div class="card-columns">
     {% for post in site.posts %}
-    <div class="col-md-4">
-      <div class="card" style="width: 20rem;">
+      <div class="card" >
+        <img class="card-img-top" src="https://unsplash.it/247/160/?random" alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title"><a class="post-link" href="{{site.baseurl}}{{  post.url }}">{{ post.title | escape }}</a></h4>
           <p class="card-text">{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
@@ -17,17 +18,19 @@ layout: default
           <a href="{{ post.url | relative_url }}" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-            
-    </div>
+      
   {% endfor %}
+  
     
-    
+  
   </div>
+  
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  
 </div>
   
 
 
   
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
 {% endraw %}

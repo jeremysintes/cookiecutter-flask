@@ -72,6 +72,5 @@ if __name__ == '__main__':
     if 'y' == '{{ cookiecutter.create_devsite }}':
         DEVSITE_DIRECTORY = os.path.join(PROJECT_DIRECTORY, '{{ cookiecutter.project_slug }}_devsite')
  
-    os.system("cd docs && make html && cd..")
-
+    # os.system("cd docs && make html && cd..")
     # os.system("git init && git flow init")
