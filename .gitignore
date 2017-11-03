@@ -1,9 +1,14 @@
+# other
+_reflexion/
+{{cookiecutter.project_slug}}/under_study
+tests/temp/
+{{cookiecutter.project_slug}}/tools_generator/access
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-_reflexion/
-tests/temp/
 
 # OSX useful to ignore
 *.DS_Store

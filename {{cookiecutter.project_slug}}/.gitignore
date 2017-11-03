@@ -1,6 +1,6 @@
 # Added
-access.py
-under_study/
+tools_generator/access.py
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
