@@ -86,16 +86,16 @@
                     {% else %}
                         href="{{ site.chat }}"
                     {% endif %}
-                href="" target="_blank" rel="noopener" aria-label="chatroom">
+                target="_blank" rel="noopener" aria-label="chatroom">
                     <i class="fa fa-comments" aria-hidden="true" title="chatroom"></i>
                 </a>
             </li>
         {% endif %}
         <li class="nav-item">
         <a class="nav-link p-2" href="https://{{site.git_source}}/{{site.git_username}}/{{site.project_slug}}" target="_blank" rel="noopener" aria-label="git repo">
-            {% if site.git_source == "github" %}
+            {% if site.git_source == "github.com" %}
                 <i class="fa fa-github fa-2" aria-hidden="true" title="git repo"></i>
-            {% elsif site.git_source == "innersource" %}
+            {% elsif site.git_source == "innersource.soprasteria.com" %}
                 <i class="fa fa-code-fork fa-2" aria-hidden="true" title="git repo"></i>
             {% endif %}
         </a>

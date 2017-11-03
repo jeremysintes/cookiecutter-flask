@@ -9,7 +9,6 @@ version: {{cookiecutter.version}}
 git_username: {{cookiecutter.git_username}}
 git_source: {{cookiecutter.git_source}}
 email: {{cookiecutter.email}}
-git_source: {{cookiecutter.git_source}}
 open_source_license: {{cookiecutter.open_source_license}}
 
 
