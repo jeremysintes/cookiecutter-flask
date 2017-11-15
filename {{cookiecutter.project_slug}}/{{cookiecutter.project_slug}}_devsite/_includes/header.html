@@ -39,6 +39,15 @@
             {% endif %}
         </li>
         {% endif %}
+        {% if site.tools %}
+        <li class="nav-item">
+            {% if site.tutorial == "y" %}
+            <a class="nav-link " href="{{site.baseurl}}/tutorial/" rel="noopener">Tutorials</a>
+            {% else %}
+            <a class="nav-link " href="{{site.tutorial}}" rel="noopener">Tutorials</a>
+            {% endif %}
+        </li>
+        {% endif %}
         {% if site.dev_blog %}
         <li class="nav-item">
             {% if site.dev_blog == "y" %}

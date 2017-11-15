@@ -74,3 +74,6 @@ if __name__ == '__main__':
 
     # os.system("cd docs && make html && cd..")
     # os.system("git init && git flow init")
+
+    # Create the project management tools
+    os.system("cd tools_generator && lets_work && cd..")
