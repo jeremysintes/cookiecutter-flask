@@ -20,6 +20,9 @@ def move(dirpath, dst):
 
 
 if __name__ == '__main__':
+
+    move('reveal', '{{ cookiecutter.project_slug }}_devsite/assets')
+
     if '{{ cookiecutter.use_pypi_deployment_with_travis }}' != 'y':
         remove_file('travis_pypi_setup.py')
 
@@ -35,14 +38,14 @@ if __name__ == '__main__':
         remove_file('LICENSE.rst')
     
     if 'pypi' == '{{ cookiecutter.type_of_project }}':
-        template_file = os.path.join('{{ cookiecutter.project_slug }}', 'templates.zip')
+        template_folder = os.path.join('{{ cookiecutter.project_slug }}', 'templates')
         views_file = os.path.join('{{ cookiecutter.project_slug }}', 'views.py')
         static_file = os.path.join('{{ cookiecutter.project_slug }}', 'static')
         init_flask_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__flask.py')
         init_pypi_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__pypi.py')
         init_file = os.path.join('{{ cookiecutter.project_slug }}', '__init__.py')
 
-        remove_file(template_file)    
+        remove_directory(template_folder) 
         remove_file(views_file)    
         remove_directory(static_file)    
         remove_file(init_flask_file)    
@@ -64,16 +67,13 @@ if __name__ == '__main__':
         remove_file('{{ cookiecutter.project_slug }}/__init__pypi.py')
         rename(init_flask_file, init_file )
         remove_file('setup.py')
-
-    
-    move('reveal', '{{ cookiecutter.project_slug }}_devsite/assets')
     
 
     if 'n' == '{{ cookiecutter.create_devsite }}':
         remove_directory('{{ cookiecutter.project_slug }}_devsite')
-
-    # os.system("cd docs && make html && cd..")
-    # os.system("git init && git flow init")
+            
 
     # Create the project management tools
     os.system("cd tools_generator && lets_work && cd..")
+    os.system("cd docs && make html && cd..")
+    os.system("git init && git flow init")
